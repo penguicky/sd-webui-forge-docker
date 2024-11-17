@@ -27,6 +27,7 @@ if [ ! -d "/app/sd-webui" ] || [ ! "$(ls -A "/app/sd-webui")" ]; then
   exec /app/sd-webui/webui.sh $ARGS
 else
   echo "Files found, starting..."
+  git config --global --add safe.directory /app/sd-webui
   cd /app/sd-webui
   git pull
   exec /app/sd-webui/webui.sh $ARGS
